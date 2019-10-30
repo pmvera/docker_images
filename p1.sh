@@ -12,8 +12,8 @@ docker run -d --name=centos7_2 --network=centos7_net --ip=172.25.20.3 --rm cento
 
 docker build -t ubuntu_1604s -f ubuntu_1604/Dockerfile .
 docker network create -d bridge --subnet 172.25.30.0/24 ubuntu16_net
-docker run -d --name=ubuntu16_1 --network=ubuntu16_net --ip=172.25.30.2 ubuntu_1604s
-docker run -d --name=ubuntu16_2 --network=ubuntu16_net --ip=172.25.30.3 ubuntu_1604s
+docker run -d --name=ubuntu16_1 --network=ubuntu16_net --ip=172.25.30.2 --rm ubuntu_1604s
+docker run -d --name=ubuntu16_2 --network=ubuntu16_net --ip=172.25.30.3 --rm ubuntu_1604s
 
 docker build -t ubuntu_1404s -f ubuntu_1404/Dockerfile .
 docker network create -d bridge --subnet 172.25.40.0/24 ubuntu14_net

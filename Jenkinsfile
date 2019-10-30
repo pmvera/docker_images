@@ -10,7 +10,12 @@ pipeline {
             chmod 700 p1.sh
             ./p1.sh
             '''
-      }
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
         }
     }
 }
